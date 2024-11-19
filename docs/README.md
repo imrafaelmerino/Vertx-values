@@ -1,4 +1,6 @@
-<img src="./logo/package_twitter_swe2n4mg/base/full/coverphoto/base_logo_white_background.png" alt="logo"/>
+<p align="center">
+  <img src="./logo/package_twitter_swe2n4mg/color1/text/profilepicture/color1_textlogo_light_background.png" alt="Logo" width="300" height="300" />
+</p>
 
 "_Immutability Changes Everything._"
 **Pat Helland**
