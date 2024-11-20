@@ -40,18 +40,10 @@
     <MAVEN-SUREFIRE-PLUGIN.VERSION>3.5.2</MAVEN-SUREFIRE-PLUGIN.VERSION>
     <MAVEN-JAR-PLUGIN.VERSION>3.4.2</MAVEN-JAR-PLUGIN.VERSION>
     <MAVEN-JAVADOC-PLUGIN.VERSION>3.11.1</MAVEN-JAVADOC-PLUGIN.VERSION>
-    <JUNIT-JUPITER-API.VERSION>5.9.3</JUNIT-JUPITER-API.VERSION>
     <JSON-VALUES.VERSION>14.0.0-RC3</JSON-VALUES.VERSION>
     <VERTX.VERSION>4.5.11</VERTX.VERSION>
   </properties>
   <dependencies>
-
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>${JUNIT-JUPITER-API.VERSION}</version>
-      <scope>test</scope>
-    </dependency>
 
     <dependency>
       <groupId>io.vertx</groupId>
