@@ -13,7 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import vertx.values.codecs.RegisterJsValuesCodecs;
 
 @ExtendWith(VertxExtension.class)
-public class TestSentToEvenBus {
+public class SentToEvenBusTest {
 
 
     @Test

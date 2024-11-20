@@ -5,7 +5,7 @@
 "_Immutability Changes Everything._"
 **Pat Helland**
 
-[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/vertx-json-values/1.0.0)](https://search.maven.org/artifact/com.github.imrafaelmerino/vertx-json-values/1.0.0/jar)
+[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/vertx-json-values/2.0.0)](https://search.maven.org/artifact/com.github.imrafaelmerino/vertx-json-values/2.0.0/jar)
 
 - [Goal](#goal)
 - [Explanation](#exp)
@@ -175,6 +175,18 @@ For Java 17 or higher:
     <version>1.0.0</version>
 </dependency>
 ```
+
+For Java 21 or higher:
+
+```xml
+
+<dependency>
+    <groupId>com.github.imrafaelmerino</groupId>
+    <artifactId>vertx-json-values</artifactId>
+    <version>2.0.0</version>
+</dependency>
+```
+
 
 Choose the appropriate version according to your Java runtime.
 

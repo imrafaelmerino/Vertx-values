@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.imrafaelmerino</groupId>
   <artifactId>vertx-json-values</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
   <name>vertx-json-values</name>
   <description>Vertx codecs to work with json-values</description>
   <url>https://github.com/imrafaelmerino/vertx-values</url>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -28,25 +28,21 @@
     <url>https://github.com/imrafaelmerino/vertx-values.git</url>
   </scm>
   <properties>
-    <error-prone.version>2.18.0</error-prone.version>
+    <error-prone.version>2.36.0</error-prone.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <NEXUS-STAGING-MAVEN-PLUGIN.VERSION>1.6.12</NEXUS-STAGING-MAVEN-PLUGIN.VERSION>
     <MAVEN-GPG-PLUGIN.VERSION>1.6</MAVEN-GPG-PLUGIN.VERSION>
     <MAVEN-SOURCE-PLUGIN.VERSION>3.0.1</MAVEN-SOURCE-PLUGIN.VERSION>
-    <JACOCO-MAVEN-PLUGIN.VERSION>0.8.8</JACOCO-MAVEN-PLUGIN.VERSION>
     <project.build.sourceEncoding>UTF8</project.build.sourceEncoding>
-    <MAVEN-COMPILER-PLUGIN.VERSION>3.10.1</MAVEN-COMPILER-PLUGIN.VERSION>
-    <MAVEN-COMPILER-PLUGIN.SOURCE>17</MAVEN-COMPILER-PLUGIN.SOURCE>
-    <MAVEN-COMPILER-PLUGIN.TARGET>17</MAVEN-COMPILER-PLUGIN.TARGET>
-    <MAVEN-SUREFIRE-PLUGIN.VERSION>3.0.0-M6</MAVEN-SUREFIRE-PLUGIN.VERSION>
-    <MAVEN-JAR-PLUGIN.VERSION>3.2.2</MAVEN-JAR-PLUGIN.VERSION>
-    <MAVEN-JAVADOC-PLUGIN.VERSION>3.3.2</MAVEN-JAVADOC-PLUGIN.VERSION>
-    <sonar.organization>imrafaelmerino</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <VERTX-JUNIT5.VERSION>4.3.0</VERTX-JUNIT5.VERSION>
-    <JUNIT-JUPITER-API.VERSION>5.8.2</JUNIT-JUPITER-API.VERSION>
-    <JSON-VALUES.VERSION>13.0.0</JSON-VALUES.VERSION>
-    <VERTX-CORE.VERSION>4.5.0</VERTX-CORE.VERSION>
+    <MAVEN-COMPILER-PLUGIN.VERSION>3.13.0</MAVEN-COMPILER-PLUGIN.VERSION>
+    <MAVEN-COMPILER-PLUGIN.SOURCE>21</MAVEN-COMPILER-PLUGIN.SOURCE>
+    <MAVEN-COMPILER-PLUGIN.TARGET>21</MAVEN-COMPILER-PLUGIN.TARGET>
+    <MAVEN-SUREFIRE-PLUGIN.VERSION>3.5.2</MAVEN-SUREFIRE-PLUGIN.VERSION>
+    <MAVEN-JAR-PLUGIN.VERSION>3.4.2</MAVEN-JAR-PLUGIN.VERSION>
+    <MAVEN-JAVADOC-PLUGIN.VERSION>3.11.1</MAVEN-JAVADOC-PLUGIN.VERSION>
+    <JUNIT-JUPITER-API.VERSION>5.9.3</JUNIT-JUPITER-API.VERSION>
+    <JSON-VALUES.VERSION>14.0.0-RC3</JSON-VALUES.VERSION>
+    <VERTX.VERSION>4.5.11</VERTX.VERSION>
   </properties>
   <dependencies>
 
@@ -60,7 +56,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-junit5</artifactId>
-      <version>${VERTX-JUNIT5.VERSION}</version>
+      <version>${VERTX.VERSION}</version>
       <scope>test</scope>
     </dependency>
 
@@ -73,7 +69,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-core</artifactId>
-      <version>${VERTX-CORE.VERSION}</version>
+      <version>${VERTX.VERSION}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -88,29 +84,26 @@
           <source>${MAVEN-COMPILER-PLUGIN.SOURCE}</source>
           <target>${MAVEN-COMPILER-PLUGIN.TARGET}</target>
           <showWarnings>true</showWarnings>
-                    <encoding>UTF-8</encoding>
+          <encoding>UTF-8</encoding>
           <compilerArgs>
-                        <arg>-XDcompilePolicy=simple</arg>
-                        <arg>-Xplugin:ErrorProne</arg>
-                        <arg>--enable-preview</arg>
-                        <arg> -Xlint:unchecked</arg>
+            <arg>-XDcompilePolicy=simple</arg>
+            <arg>--should-stop=ifError=FLOW</arg>
+            <arg>-Xplugin:ErrorProne -Xep:DeadException:WARN -Xep:GuardedBy:OFF</arg>
+            <arg>-Xlint:unchecked</arg>
           </compilerArgs>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>com.google.errorprone</groupId>
-                            <artifactId>error_prone_core</artifactId>
-                            <version>${error-prone.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>com.google.errorprone</groupId>
+              <artifactId>error_prone_core</artifactId>
+              <version>${error-prone.version}</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${MAVEN-SUREFIRE-PLUGIN.VERSION}</version>
-                <configuration>
-                    <argLine>--enable-preview</argLine>
-                </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -125,33 +118,12 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.4</version>
-        <executions>
-          <execution>
-            <id>test</id>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>report</id>
-            <phase>test</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>${MAVEN-JAVADOC-PLUGIN.VERSION}</version>
-        <configuration>
-                    <source>17</source>
-                    <additionalOptions>--enable-preview</additionalOptions>
-        </configuration>
+                <configuration>
+                    <source>${MAVEN-COMPILER-PLUGIN.SOURCE}</source>
+                </configuration>
         <executions>
           <execution>
             <id>attach-javadocs</id>
