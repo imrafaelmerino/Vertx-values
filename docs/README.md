@@ -5,6 +5,8 @@
 "_Immutability Changes Everything._"
 **Pat Helland**
 
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%E2%98%95%20Support-yellow)](https://www.buymeacoffee.com/imrafaelmerino)
+
 [![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/vertx-json-values/2.0.0)](https://search.maven.org/artifact/com.github.imrafaelmerino/vertx-json-values/2.0.0/jar)
 
 - [Goal](#goal)

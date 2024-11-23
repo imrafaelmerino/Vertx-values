@@ -81,7 +81,7 @@
             <arg>-XDcompilePolicy=simple</arg>
             <arg>--should-stop=ifError=FLOW</arg>
             <arg>-Xplugin:ErrorProne -Xep:DeadException:WARN -Xep:GuardedBy:OFF</arg>
-            <arg>-Xlint:unchecked</arg>
+            <arg>-Xlint:all</arg>
           </compilerArgs>
           <annotationProcessorPaths>
             <path>
